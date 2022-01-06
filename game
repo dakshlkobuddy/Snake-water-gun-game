@@ -1,0 +1,51 @@
+import random
+my_score=0
+comp_score=0
+draw=0
+n=int(input("how many times do you want to play"))
+while n>=1:
+    lst=['Snake','Water','Gun']
+    choice=random.choice(lst)
+    a=input("enter your choice: s/w/g")
+    if a=='s' or a=='S':
+        if choice=='Snake':
+            print("game draw")
+            draw+=1
+        elif choice=='Water':
+            print("you won")
+            my_score+=1
+        elif choice=='Gun':
+            print("computer won")
+            comp_score+=1
+    elif a=='w' or a=='W':
+        if choice=='Snake':
+            print("computer won")
+            comp_score+=1
+        elif choice=='Water':
+            print("game draw")
+            draw+=1
+        elif choice=='Gun':
+            print("you won")
+            my_score+=1
+    elif a=='g' or a=='G':
+        if choice=='Snake':
+            print("you won")
+            my_score+=1
+        elif choice=='Water':
+            print("computer won")
+            comp_score+=1
+        elif choice=='Gun':
+            print("game draw")
+            draw+=1
+    else:
+        print("your input is wrong")
+    n=n-1
+if my_score>comp_score:
+    print("congratulations! you won this game")
+elif comp_score>my_score:
+    print("oh! computer won this game")
+else:
+    print("game drawn")
+print("your score is:",my_score)
+print("computer score is:",comp_score)
+print("GAME OVER")
